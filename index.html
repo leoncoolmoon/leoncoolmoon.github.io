@@ -10,7 +10,7 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-            position: relative; /* 使得绝对定位的元素以此为参考 */
+            position: relative; /* 用于定位悬浮的二维码 */
         }
 
         h1 {
@@ -46,7 +46,7 @@
         ul {
             list-style-type: none;
             padding: 0;
-            max-width: 600px;
+            max-width: 90%; /* 在窄屏时增大宽度 */
             margin: 0 auto;
         }
 
@@ -58,20 +58,36 @@
             border-radius: 4px;
         }
 
-        #fixed-images {
-            position: fixed; /* 固定定位 */
-            left: 20px; /* 距离左侧20px */
-            top: 100px; /* 距离顶部100px */
-            background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
-            padding: 10px; /* 内边距 */
-            border-radius: 8px; /* 圆角 */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        img {
+            max-width: 150px; /* 控制二维码图片的最大宽度 */
         }
 
-        #fixed-images img {
-            display: block; /* 每张图片单独占一行 */
-            margin-bottom: 10px; /* 图片间距 */
-            max-width: 100px; /* 图片最大宽度 */
+        /* 宽屏时显示二维码在页面左侧 */
+        @media (min-width: 768px) {
+            .qr-codes {
+                position: fixed;
+                left: 20px; /* 悬浮在页面左侧 */
+                top: 20px;
+                z-index: 1000; /* 确保二维码在上层 */
+            }
+
+            .qr-codes img {
+                display: block;
+                margin-bottom: 10px; /* 图片之间的间距 */
+            }
+        }
+
+        /* 窄屏时将二维码放置在footer中 */
+        @media (max-width: 767px) {
+            .qr-codes {
+                display: flex; /* 使用flex布局以横向显示 */
+                justify-content: center; /* 居中对齐 */
+                margin-top: 20px; /* 顶部间距 */
+            }
+
+            .qr-codes img {
+                margin: 0 5px; /* 图片之间的间距 */
+            }
         }
     </style>
 </head>
@@ -93,7 +109,9 @@
         <li><a href="blackScreen">Black Screen</a></li>
         <li><a href="html-css-javascript-games">一些html5小游戏</a></li>
     </ul>
-    <div id="fixed-images">
+
+    <!-- 二维码图片 -->
+    <div class="qr-codes">
         <img src="pp_my_qrcode_1693369198104.jpg" alt="paypal">
         <img src="1693367787303.jpg" alt="alipay 支付宝">
         <img src="mm_reward_qrcode_1693367965190.png" alt="wechat 微信">
