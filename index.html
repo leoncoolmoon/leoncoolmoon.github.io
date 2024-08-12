@@ -63,10 +63,10 @@
         }
 
         /* 宽屏时显示二维码在页面左侧 */
-        @media (min-width: 768px) {
+        @media (min-aspect-ratio: 1/1) {
             .qr-codes {
                 position: fixed;
-                left: 20px; /* 悬浮在页面左侧 */
+                right: 20px; /* 悬浮在页面左侧 */
                 top: 20px;
                 z-index: 1000; /* 确保二维码在上层 */
             }
