@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 1em;
+            font-size: 2em;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
@@ -63,23 +63,9 @@
             max-width: 150px; /* 控制二维码图片的最大宽度 */
         }
 
-        /* 宽屏时显示二维码在页面左侧 */
-        @media (min-aspect-ratio: 1/1) {
-            .qr-codes {
-                position: fixed;
-                right: 20px; /* 悬浮在页面左侧 */
-                top: 20px;
-                z-index: 1000; /* 确保二维码在上层 */
-            }
-
-            .qr-codes img {
-                display: block;
-                margin-bottom: 10px; /* 图片之间的间距 */
-            }
-        }
 
         /* 窄屏时将二维码放置在footer中 */
-        @media (max-aspect-ratio: 1/1) {
+
             .qr-codes {
                 display: flex; /* 使用flex布局以横向显示 */
                 justify-content: center; /* 居中对齐 */
@@ -89,7 +75,7 @@
             .qr-codes img {
                 margin: 0 5px; /* 图片之间的间距 */
             }
-        }
+        
     </style>
 </head>
 <body>
