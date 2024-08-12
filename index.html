@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            font-size: 1em;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
@@ -78,7 +79,7 @@
         }
 
         /* 窄屏时将二维码放置在footer中 */
-        @media (max-width: 767px) {
+        @media (max-aspect-ratio: 1/1) {
             .qr-codes {
                 display: flex; /* 使用flex布局以横向显示 */
                 justify-content: center; /* 居中对齐 */
