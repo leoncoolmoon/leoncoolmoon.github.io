@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png">
     <title>LeonCoolMoon 的 GitHub 项目主页</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            const htmlElement = document.documentElement;
+            if (savedTheme === 'system') {
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', systemTheme);
+            } else {
+                htmlElement.setAttribute('data-theme', savedTheme);
+            }
+        })();
+    </script>
     <style>
         :root {
             --primary-color: #4CAF50;
             --secondary-color: #333;
             --bg-color: #f4f4f7;
             --card-bg: #ffffff;
+            --text-muted: #666;
+            --border-color: #eee;
+            --qr-section-bg: #ffffff;
             --shadow: 0 4px 6px rgba(0,0,0,0.1);
             --hover-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            --donate-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        [data-theme='dark'] {
+            --secondary-color: #e0e0e0;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-muted: #aaa;
+            --border-color: #333;
+            --qr-section-bg: #1e1e1e;
+            --shadow: 0 4px 6px rgba(0,0,0,0.5);
+            --hover-shadow: 0 8px 15px rgba(0,0,0,0.7);
+            --donate-shadow: 0 2px 4px rgba(255,255,255,0.1);
         }
 
         body {
@@ -45,7 +73,7 @@
 
         .description {
             text-align: center;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 30px;
         }
 
@@ -59,7 +87,7 @@
             margin: 20px auto;
             display: block;
             border-radius: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: var(--donate-shadow);
             transition: transform 0.2s;
         }
 
@@ -106,7 +134,7 @@
 
         .project-card p {
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 15px;
         }
 
@@ -120,7 +148,7 @@
         .qr-section {
             margin-top: 60px;
             text-align: center;
-            background: #fff;
+            background: var(--qr-section-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow);
@@ -143,14 +171,14 @@
             max-width: 100%;
             height: auto;
             border-radius: 5px;
-            border: 1px solid #eee;
+            border: 1px solid var(--border-color);
         }
 
         .qr-item span {
             display: block;
             margin-top: 10px;
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-muted);
         }
 
         @media (max-width: 600px) {
@@ -161,9 +189,38 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: var(--card-bg);
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        #theme-select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--secondary-color);
+            cursor: pointer;
+            outline: none;
+        }
     </style>
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <select id="theme-select">
+            <option value="system">💻 系统</option>
+            <option value="light">🌞 浅色</option>
+            <option value="dark">🌚 深色</option>
+        </select>
+    </div>
     <div class="container">
         <h1>欢迎来到我的 <a href="https://github.com/leoncoolmoon?tab=repositories" target="_blank">GitHub 仓库</a></h1>
         
@@ -322,5 +379,35 @@
             </div>
         </div>
     </div>
+    <script>
+        const themeSelect = document.getElementById('theme-select');
+        const htmlElement = document.documentElement;
+
+        // Initialize select value
+        const savedTheme = localStorage.getItem('theme') || 'system';
+        themeSelect.value = savedTheme;
+
+        function applyTheme(theme) {
+            if (theme === 'system') {
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', systemTheme);
+            } else {
+                htmlElement.setAttribute('data-theme', theme);
+            }
+        }
+
+        themeSelect.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            localStorage.setItem('theme', theme);
+            applyTheme(theme);
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (localStorage.getItem('theme') === 'system' || !localStorage.getItem('theme')) {
+                applyTheme('system');
+            }
+        });
+    </script>
 </body>
 </html>
