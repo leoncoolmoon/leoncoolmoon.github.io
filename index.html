@@ -128,20 +128,55 @@
 
         .project-card h3 {
             margin-top: 0;
-            color: var(--primary-color);
+            margin-bottom: 10px;
             font-size: 1.2em;
+        }
+
+        .project-card h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project-card h3 a:hover {
+            text-decoration: underline;
         }
 
         .project-card p {
             font-size: 0.9em;
             color: var(--text-muted);
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
-        .project-card .link-text {
+        .card-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .card-link {
             font-weight: bold;
             color: var(--primary-color);
-            align-self: flex-end;
+            text-decoration: none;
+            font-size: 0.88em;
+            transition: color 0.2s ease;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        .card-link.repo-link {
+            color: var(--text-muted);
+        }
+
+        .card-link.repo-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
         }
 
         /* 二维码区域 */
@@ -233,136 +268,200 @@
         <!-- 模拟器 -->
         <h2 class="category-title">模拟器 (Emulators)</h2>
         <div class="project-grid">
-            <a href="jswqx1020" class="project-card">
-                <h3>网页版文曲星 NC1020 模拟器</h3>
+            <div class="project-card">
+                <h3><a href="jswqx1020" target="_blank" rel="noopener noreferrer">网页版文曲星 NC1020 模拟器</a></h3>
                 <p>基于 JavaScript 的文曲星 NC1020 经典模拟器。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="https://leoncoolmoon.github.io/NC2000-wasm/build/index.html" class="project-card">
-                <h3>网页版文曲星 NC2000 模拟器</h3>
+                <div class="card-links">
+                <a href="jswqx1020" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/jswqx1020" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://leoncoolmoon.github.io/NC2000-wasm/build/index.html" target="_blank" rel="noopener noreferrer">网页版文曲星 NC2000 模拟器</a></h3>
                 <p>使用 WebAssembly 技术移植的 NC2000 模拟器，性能强劲。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
+                <div class="card-links">
+                <a href="https://leoncoolmoon.github.io/NC2000-wasm/build/index.html" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/NC2000-wasm" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
         </div>
 
         <!-- AI 工具 -->
         <h2 class="category-title">AI 工具 (AI Tools)</h2>
         <div class="project-grid">
-            <a href="toolsForAi" class="project-card">
-                <h3>AI 测试工具</h3>
+            <div class="project-card">
+                <h3><a href="toolsForAi" target="_blank" rel="noopener noreferrer">AI 测试工具</a></h3>
                 <p>专门用于测试 AI 模型能力的实用工具集。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="chatbox" class="project-card">
-                <h3>Chatbox</h3>
+                <div class="card-links">
+                <a href="toolsForAi" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/toolsForAi" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="chatbox" target="_blank" rel="noopener noreferrer">Chatbox</a></h3>
                 <p>简洁好用的 AI 聊天界面。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="https://github.com/leoncoolmoon/stable_diffusion_online" class="project-card">
-                <h3>Stable Diffusion Online</h3>
+                <div class="card-links">
+                <a href="chatbox" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/chatbox" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/leoncoolmoon/stable_diffusion_online" target="_blank" rel="noopener noreferrer">Stable Diffusion Online</a></h3>
                 <p>在线运行 Stable Diffusion 的便捷方案。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
+                <div class="card-links">
+                    <a href="https://github.com/leoncoolmoon/stable_diffusion_online" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+                </div>
+            </div>
         </div>
 
         <!-- 图形 & 视觉 -->
         <h2 class="category-title">图形 & 视觉 (Graphics & Vision)</h2>
         <div class="project-grid">
-            <a href="cameraEye" class="project-card">
-                <h3>cameraEye</h3>
+            <div class="project-card">
+                <h3><a href="cameraEye" target="_blank" rel="noopener noreferrer">cameraEye</a></h3>
                 <p>摄像头视觉识别与处理相关项目。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="gCodeViewer" class="project-card">
-                <h3>gCodeViewer</h3>
+                <div class="card-links">
+                <a href="cameraEye" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/cameraEye" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="gCodeViewer" target="_blank" rel="noopener noreferrer">gCodeViewer</a></h3>
                 <p>用于预览 3D 打印 G-Code 文件的在线查看器。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="https://mp.weixin.qq.com/s?chksm=e923a676de542f6044df8e3355cca11127fb81aede4ef4574ae5f288627183564a0158fd8053&exptype=unsubscribed_card_recommend_article_u2i_mainprocess_coarse_sort_tlfeeds&ranksessionid=1708720176_14&mid=2247487045&sn=10e0c31fc5b249a2d4b03885a35a1836&idx=1&__biz=MzIzOTkxMTI2MA%3D%3D&scene=169&subscene=200&sessionid=1708720175&flutter_pos=129&clicktime=1708722112&enterid=1708722112&finder_biz_enter_id=5&ascene=56&fasttmpl_type=0&fasttmpl_fullversion=7089552-zh_CN-zip&fasttmpl_flag=0&realreporttime=1708722112447&devicetype=android-33&version=28002f35&nettype=WIFI&lang=zh_CN&session_us=gh_33cf0ec55aee&countrycode=AU&exportkey=n_ChQIAhIQuIOsxa9POkHDv5JrpAOeexLkAQIE97dBBAEAAAAAAFeSLX998hcAAAAOpnltbLcz9gKNyK89dVj0wCPpKsBdThE2OOR2mr2izrl4tbW5iAVcK7ZwkXUknSH1jMjUUhUSQd9qrYbElMBi%2BOXoz3%2Bof6rnU81FmxH6mJz4C3NjzkW5CDIa9%2BfMwTfQEVbG2niThJm7qPt1pOsMjAcY%2FHAaLwU91SPZU1fJRDPw0YfpA82ZhRA38VPNLX60QOYL5QD7IRVL5F2RS%2BXc%2FIfDmDHYEnwar86iIB7wT2D3b3DUwOvsqyo1dUBXH73AEHGWyYTeYHNcSucGYQ%3D%3D&pass_ticket=PwgiqskDPaVMiSv5s2gtc6MAHOt3fx8rs0K07jlviw%2BdFWRnc42FoFg2LL%2FBhn%2FnvemsAcaJGvSSxmV0ByaKQQ%3D%3D&wx_header=3" class="project-card">
-                <h3>收藏 Three.js 网页</h3>
+                <div class="card-links">
+                <a href="gCodeViewer" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/gCodeViewer" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://mp.weixin.qq.com/s?chksm=e923a676de542f6044df8e3355cca11127fb81aede4ef4574ae5f288627183564a0158fd8053&exptype=unsubscribed_card_recommend_article_u2i_mainprocess_coarse_sort_tlfeeds&ranksessionid=1708720176_14&mid=2247487045&sn=10e0c31fc5b249a2d4b03885a35a1836&idx=1&__biz=MzIzOTkxMTI2MA%3D%3D&scene=169&subscene=200&sessionid=1708720175&flutter_pos=129&clicktime=1708722112&enterid=1708722112&finder_biz_enter_id=5&ascene=56&fasttmpl_type=0&fasttmpl_fullversion=7089552-zh_CN-zip&fasttmpl_flag=0&realreporttime=1708722112447&devicetype=android-33&version=28002f35&nettype=WIFI&lang=zh_CN&session_us=gh_33cf0ec55aee&countrycode=AU&exportkey=n_ChQIAhIQuIOsxa9POkHDv5JrpAOeexLkAQIE97dBBAEAAAAAAFeSLX998hcAAAAOpnltbLcz9gKNyK89dVj0wCPpKsBdThE2OOR2mr2izrl4tbW5iAVcK7ZwkXUknSH1jMjUUhUSQd9qrYbElMBi%2BOXoz3%2Bof6rnU81FmxH6mJz4C3NjzkW5CDIa9%2BfMwTfQEVbG2niThJm7qPt1pOsMjAcY%2FHAaLwU91SPZU1fJRDPw0YfpA82ZhRA38VPNLX60QOYL5QD7IRVL5F2RS%2BXc%2FIfDmDHYEnwar86iIB7wT2D3b3DUwOvsqyo1dUBXH73AEHGWyYTeYHNcSucGYQ%3D%3D&pass_ticket=PwgiqskDPaVMiSv5s2gtc6MAHOt3fx8rs0K07jlviw%2BdFWRnc42FoFg2LL%2FBhn%2FnvemsAcaJGvSSxmV0ByaKQQ%3D%3D&wx_header=3" target="_blank" rel="noopener noreferrer">收藏 Three.js 网页</a></h3>
                 <p>精选的优秀 Three.js 视觉作品集。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="blackScreen" class="project-card">
-                <h3>Black Screen</h3>
+                <div class="card-links">
+                <a href="https://mp.weixin.qq.com/s?chksm=e923a676de542f6044df8e3355cca11127fb81aede4ef4574ae5f288627183564a0158fd8053&exptype=unsubscribed_card_recommend_article_u2i_mainprocess_coarse_sort_tlfeeds&ranksessionid=1708720176_14&mid=2247487045&sn=10e0c31fc5b249a2d4b03885a35a1836&idx=1&__biz=MzIzOTkxMTI2MA%3D%3D&scene=169&subscene=200&sessionid=1708720175&flutter_pos=129&clicktime=1708722112&enterid=1708722112&finder_biz_enter_id=5&ascene=56&fasttmpl_type=0&fasttmpl_fullversion=7089552-zh_CN-zip&fasttmpl_flag=0&realreporttime=1708722112447&devicetype=android-33&version=28002f35&nettype=WIFI&lang=zh_CN&session_us=gh_33cf0ec55aee&countrycode=AU&exportkey=n_ChQIAhIQuIOsxa9POkHDv5JrpAOeexLkAQIE97dBBAEAAAAAAFeSLX998hcAAAAOpnltbLcz9gKNyK89dVj0wCPpKsBdThE2OOR2mr2izrl4tbW5iAVcK7ZwkXUknSH1jMjUUhUSQd9qrYbElMBi%2BOXoz3%2Bof6rnU81FmxH6mJz4C3NjzkW5CDIa9%2BfMwTfQEVbG2niThJm7qPt1pOsMjAcY%2FHAaLwU91SPZU1fJRDPw0YfpA82ZhRA38VPNLX60QOYL5QD7IRVL5F2RS%2BXc%2FIfDmDHYEnwar86iIB7wT2D3b3DUwOvsqyo1dUBXH73AEHGWyYTeYHNcSucGYQ%3D%3D&pass_ticket=PwgiqskDPaVMiSv5s2gtc6MAHOt3fx8rs0K07jlviw%2BdFWRnc42FoFg2LL%2FBhn%2FnvemsAcaJGvSSxmV0ByaKQQ%3D%3D&wx_header=3" target="_blank" rel="noopener noreferrer" class="card-link">访问文章 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="blackScreen" target="_blank" rel="noopener noreferrer">Black Screen</a></h3>
                 <p>极简的黑屏工具，用于清洁或专注。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="vrPlayer" class="project-card">
-                <h3>VR 播放器</h3>
+                <div class="card-links">
+                <a href="blackScreen" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/blackScreen" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="vrPlayer" target="_blank" rel="noopener noreferrer">VR 播放器</a></h3>
                 <p>本地 VR 播放器，支持 180 度 Side-by-Side 影片。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="ARProjector" class="project-card">
-                <h3>ARProjector</h3>
+                <div class="card-links">
+                <a href="vrPlayer" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/vrPlayer" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="ARProjector" target="_blank" rel="noopener noreferrer">ARProjector</a></h3>
                 <p>利用摄像头虚拟投影图片方便手绘。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
+                <div class="card-links">
+                <a href="ARProjector" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/ARProjector" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
         </div>
 
         <!-- 实用工具 -->
         <h2 class="category-title">实用工具 (Utilities)</h2>
         <div class="project-grid">
-            <a href="antiMortgage" class="project-card">
-                <h3>房贷计算器 (antiMortgage)</h3>
+            <div class="project-card">
+                <h3><a href="antiMortgage" target="_blank" rel="noopener noreferrer">房贷计算器 (antiMortgage)</a></h3>
                 <p>实用的房贷计算与对比分析工具。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="workCalender" class="project-card">
-                <h3>工作日历 (workCalender)</h3>
+                <div class="card-links">
+                <a href="antiMortgage" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/antiMortgage" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="workCalender" target="_blank" rel="noopener noreferrer">工作日历 (workCalender)</a></h3>
                 <p>个人工作进度与任务管理日历。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="BluetoothLocator" class="project-card">
-                <h3>蓝牙测距 (BluetoothLocator)</h3>
+                <div class="card-links">
+                <a href="workCalender" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/workCalender" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="BluetoothLocator" target="_blank" rel="noopener noreferrer">蓝牙测距 (BluetoothLocator)</a></h3>
                 <p>一个不精确但有趣的蓝牙信号强度测距程序。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="simpleVoiceRecorder" class="project-card">
-                <h3>录音机 (simpleVoiceRecorder)</h3>
+                <div class="card-links">
+                <a href="BluetoothLocator" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/BluetoothLocator" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="simpleVoiceRecorder" target="_blank" rel="noopener noreferrer">录音机 (simpleVoiceRecorder)</a></h3>
                 <p>基于 Web 的简单录音与回放工具。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="dictation" class="project-card">
-                <h3>听写器 (dictation)</h3>
+                <div class="card-links">
+                <a href="simpleVoiceRecorder" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/simpleVoiceRecorder" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="dictation" target="_blank" rel="noopener noreferrer">听写器 (dictation)</a></h3>
                 <p>输入单词并定时自动朗读，辅助记忆。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="compare" class="project-card">
-                <h3>文本比较工具 (compare)</h3>
+                <div class="card-links">
+                <a href="dictation" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/dictation" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="compare" target="_blank" rel="noopener noreferrer">文本比较工具 (compare)</a></h3>
                 <p>快速比对两段文本差异的实用小工具。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="bin2h2bin" class="project-card">
-                <h3>格式转换 (bin2h2bin)</h3>
+                <div class="card-links">
+                <a href="compare" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/compare" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="bin2h2bin" target="_blank" rel="noopener noreferrer">格式转换 (bin2h2bin)</a></h3>
                 <p>二进制文件与 C 头文件之间的互转工具。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="textbase64" class="project-card">
-                <h3>Base64 转换器</h3>
+                <div class="card-links">
+                <a href="bin2h2bin" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/bin2h2bin" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="textbase64" target="_blank" rel="noopener noreferrer">Base64 转换器</a></h3>
                 <p>文本与 Base64 编码之间的快速转换。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="click2read" class="project-card">
-                <h3>文本朗读工具 (click2read)</h3>
+                <div class="card-links">
+                <a href="textbase64" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/textbase64" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="click2read" target="_blank" rel="noopener noreferrer">文本朗读工具 (click2read)</a></h3>
                 <p>点击即读的在线文本转语音工具。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
+                <div class="card-links">
+                <a href="click2read" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/click2read" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
         </div>
 
         <!-- 游戏 -->
         <h2 class="category-title">游戏与娱乐 (Games)</h2>
         <div class="project-grid">
-            <a href="html-css-javascript-games" class="project-card">
-                <h3>HTML5 小游戏合集</h3>
+            <div class="project-card">
+                <h3><a href="html-css-javascript-games" target="_blank" rel="noopener noreferrer">HTML5 小游戏合集</a></h3>
                 <p>一些有趣的 HTML5, CSS 和 JavaScript 原生小游戏。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
-            <a href="puzzleSolver" class="project-card">
-                <h3>九宫格拼图解谜器</h3>
+                <div class="card-links">
+                <a href="html-css-javascript-games" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/html-css-javascript-games" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
+            <div class="project-card">
+                <h3><a href="puzzleSolver" target="_blank" rel="noopener noreferrer">九宫格拼图解谜器</a></h3>
                 <p>自动求解九宫格拼图的算法实现。</p>
-                <span class="link-text">访问项目 &rarr;</span>
-            </a>
+                <div class="card-links">
+                <a href="puzzleSolver" target="_blank" rel="noopener noreferrer" class="card-link">访问项目 &rarr;</a>
+                <a href="https://github.com/leoncoolmoon/puzzleSolver" target="_blank" rel="noopener noreferrer" class="card-link repo-link">GitHub 仓库 &rarr;</a>
+            </div>
+            </div>
         </div>
 
         <!-- 二维码区域 -->
